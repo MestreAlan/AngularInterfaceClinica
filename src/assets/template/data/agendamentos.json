@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "id": "0001",
+            "data": "2024-12-31",
+            "status": "Concluído",
+            "usuario": [
+                {
+                    "id": "0001",
+                    "nome": "Alan"
+                }
+            ],
+            "clinica": [
+                {
+                    "id": "0001",
+                    "nome": "Mais Dental Med",
+                    "profissional": "Antony",
+                    "contatos": [
+                        {
+                            "id": "0001",
+                            "numero": "84 9 8765-8838"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "0002",
+            "data": "2024-12-30",
+            "status": "Em aberto",
+            "usuario": [
+                {
+                    "id": "0001",
+                    "nome": "Alan"
+                }
+            ],
+            "clinica": [
+                {
+                    "id": "0002",
+                    "nome": "Medi Mais",
+                    "profissional": "Francisca",
+                    "contatos": [
+                        {
+                            "id": "0002",
+                            "numero": "84 9 8762-5123"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

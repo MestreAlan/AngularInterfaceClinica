@@ -1,0 +1,507 @@
+{
+    "data": [
+        {
+            "id": "0001",
+            "nome": "Mais Dental Med",
+            "endereco": [
+                {
+                    "cep": "59139-130",
+                    "logradouro": "Rua dos mulungus",
+                    "numero": "3165",
+                    "complemento": "",
+                    "bairro": "Lagoa Azul",
+                    "cidade": "Natal",
+                    "estado": "RN",
+                    "ponto_de_referencia": ""
+                }
+            ],
+            "atendimento_inicio": "08:00",
+            "atendimento_fim": "18:00",
+            "verificacao": true,
+            "contatos": [
+                {
+                    "telefone": "84 9 8888-8888"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Odontologia geral",
+                    "profissional": "Francisco",
+                    "plano_de_saude": [
+                        {
+                            "id": "0001",
+                            "nome": "Dental K25 Nac R PF SUP22A",
+                            "codigo": "474717158"
+                        }
+                    ],
+                    "valor_da_consulta": "150.00"
+                },
+                {
+                    "nome": "Odontologia geral",
+                    "profissional": "Maria",
+                    "plano_de_saude": [
+                        {
+                            "id": "0002",
+                            "nome": "+ ODONTO PREMIUM FIT",
+                            "codigo": "483194192"
+                        }
+                    ],
+                    "valor_da_consulta": "100.00"
+                }
+            ]
+        },
+        {
+            "id": "0002",
+            "nome": "Dental Care",
+            "endereco": [
+                {
+                    "cep": "59000-000",
+                    "logradouro": "Avenida Central",
+                    "numero": "123",
+                    "complemento": "Sala 205",
+                    "bairro": "Centro",
+                    "cidade": "Natal",
+                    "estado": "RN",
+                    "ponto_de_referencia": "Próximo ao shopping"
+                }
+            ],
+            "atendimento_inicio": "09:30",
+            "atendimento_fim": "17:45",
+            "verificacao": false,
+            "contatos": [
+                {
+                    "telefone": "84 9 8888-7777"
+                },
+                {
+                    "telefone": "84 9 8888-9999"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Ortodontia",
+                    "profissional": "João",
+                    "plano_de_saude": [
+                        {
+                            "id": "0003",
+                            "nome": "OrtoDente Plus",
+                            "codigo": "912837465"
+                        }
+                    ],
+                    "valor_da_consulta": "200.00"
+                },
+                {
+                    "nome": "Implantodontia",
+                    "profissional": "Carla",
+                    "plano_de_saude": [
+                        {
+                            "id": "0004",
+                            "nome": "Saúde Dental Familiar",
+                            "codigo": "837465912"
+                        }
+                    ],
+                    "valor_da_consulta": "130.00"
+                }
+            ]
+        },
+        {
+            "id": "0003",
+            "nome": "Sorriso Feliz",
+            "endereco": [
+                {
+                    "cep": "58000-000",
+                    "logradouro": "Rua das Flores",
+                    "numero": "45",
+                    "complemento": "",
+                    "bairro": "Centro",
+                    "cidade": "João Pessoa",
+                    "estado": "PB",
+                    "ponto_de_referencia": ""
+                }
+            ],
+            "atendimento_inicio": "07:45",
+            "atendimento_fim": "19:30",
+            "verificacao": true,
+            "contatos": [
+                {
+                    "telefone": "84 9 5555-5555"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Clínica geral",
+                    "profissional": "Ana",
+                    "plano_de_saude": [
+                        {
+                            "id": "0005",
+                            "nome": "DentalVida Plus",
+                            "codigo": "654987321"
+                        }
+                    ],
+                    "valor_da_consulta": "180.00"
+                },
+                {
+                    "nome": "Endodontia",
+                    "profissional": "Pedro",
+                    "plano_de_saude": [
+                        {
+                            "id": "0006",
+                            "nome": "SmileHealth",
+                            "codigo": "321654987"
+                        }
+                    ],
+                    "valor_da_consulta": "250.00"
+                }
+            ]
+        },
+        {
+            "id": "0004",
+            "nome": "Smile Clinic",
+            "endereco": [
+                {
+                    "cep": "70000-000",
+                    "logradouro": "Avenida Principal",
+                    "numero": "67",
+                    "complemento": "Sala 102",
+                    "bairro": "Centro",
+                    "cidade": "Brasília",
+                    "estado": "DF",
+                    "ponto_de_referencia": "Próximo à praça central"
+                }
+            ],
+            "atendimento_inicio": "08:15",
+            "atendimento_fim": "18:45",
+            "verificacao": true,
+            "contatos": [
+                {
+                    "telefone": "84 9 6666-6666"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Ortopedia facial",
+                    "profissional": "Mariana",
+                    "plano_de_saude": [
+                        {
+                            "id": "0007",
+                            "nome": "OrtoDental Care",
+                            "codigo": "987654321"
+                        }
+                    ],
+                    "valor_da_consulta": "120.00"
+                },
+                {
+                    "nome": "Cirurgia bucomaxilofacial",
+                    "profissional": "Lucas",
+                    "plano_de_saude": [
+                        {
+                            "id": "0008",
+                            "nome": "BocaSaudável",
+                            "codigo": "456123789"
+                        }
+                    ],
+                    "valor_da_consulta": "170.00"
+                }
+            ]
+        },
+        {
+            "id": "0005",
+            "nome": "Dente Saudável",
+            "endereco": [
+                {
+                    "cep": "64000-000",
+                    "logradouro": "Rua da Saúde",
+                    "numero": "89",
+                    "complemento": "",
+                    "bairro": "Centro",
+                    "cidade": "Teresina",
+                    "estado": "PI",
+                    "ponto_de_referencia": ""
+                }
+            ],
+            "atendimento_inicio": "07:30",
+            "atendimento_fim": "17:00",
+            "verificacao": false,
+            "contatos": [
+                {
+                    "telefone": "84 9 7777-7777"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Periodontia",
+                    "profissional": "Fernanda",
+                    "plano_de_saude": [
+                        {
+                            "id": "0009",
+                            "nome": "GumGuardian",
+                            "codigo": "741852963"
+                        }
+                    ],
+                    "valor_da_consulta": "200.00"
+                },
+                {
+                    "nome": "Odontopediatria",
+                    "profissional": "Ricardo",
+                    "plano_de_saude": [
+                        {
+                            "id": "0010",
+                            "nome": "SmilePro",
+                            "codigo": "852369741"
+                        }
+                    ],
+                    "valor_da_consulta": "150.00"
+                }
+            ]
+        },
+        {
+            "id": "0006",
+            "nome": "Oral Clinic",
+            "endereco": [
+                {
+                    "cep": "87000-000",
+                    "logradouro": "Avenida das Árvores",
+                    "numero": "34",
+                    "complemento": "Sala 301",
+                    "bairro": "Jardim Botânico",
+                    "cidade": "Londrina",
+                    "estado": "PR",
+                    "ponto_de_referencia": "Próximo ao parque"
+                }
+            ],
+            "atendimento_inicio": "09:00",
+            "atendimento_fim": "19:15",
+            "verificacao": true,
+            "contatos": [
+                {
+                    "telefone": "84 9 3333-3333"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Ortodontia",
+                    "profissional": "Gabriela",
+                    "plano_de_saude": [
+                        {
+                            "id": "0003",
+                            "nome": "OrtoDente Plus",
+                            "codigo": "912837465"
+                        }
+                    ],
+                    "valor_da_consulta": "150.00"
+                },
+                {
+                    "nome": "Implantodontia",
+                    "profissional": "Rodrigo",
+                    "plano_de_saude": [
+                        {
+                            "id": "0004",
+                            "nome": "Saúde Dental Familiar",
+                            "codigo": "837465912"
+                        }
+                    ],
+                    "valor_da_consulta": "170.00"
+                }
+            ]
+        },
+        {
+            "id": "0007",
+            "nome": "Dentistry Plus",
+            "endereco": [
+                {
+                    "cep": "88000-000",
+                    "logradouro": "Rua dos Dentes",
+                    "numero": "56",
+                    "complemento": "",
+                    "bairro": "Centro",
+                    "cidade": "Florianópolis",
+                    "estado": "SC",
+                    "ponto_de_referencia": ""
+                }
+            ],
+            "atendimento_inicio": "08:30",
+            "atendimento_fim": "18:30",
+            "verificacao": true,
+            "contatos": [
+                {
+                    "telefone": "84 9 4444-4444"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Odontopediatria",
+                    "profissional": "Juliana",
+                    "plano_de_saude": [
+                        {
+                            "id": "0011",
+                            "nome": "SmileGuard",
+                            "codigo": "369852147"
+                        }
+                    ],
+                    "valor_da_consulta": "140.00"
+                },
+                {
+                    "nome": "Cirurgia bucal",
+                    "profissional": "André",
+                    "plano_de_saude": [
+                        {
+                            "id": "0012",
+                            "nome": "BucalCare",
+                            "codigo": "258147369"
+                        }
+                    ],
+                    "valor_da_consulta": "200.00"
+                }
+            ]
+        },
+        {
+            "id": "0008",
+            "nome": "Teeth Experts",
+            "endereco": [
+                {
+                    "cep": "69000-000",
+                    "logradouro": "Avenida dos Sorrisos",
+                    "numero": "78",
+                    "complemento": "",
+                    "bairro": "Centro",
+                    "cidade": "Manaus",
+                    "estado": "AM",
+                    "ponto_de_referencia": ""
+                }
+            ],
+            "atendimento_inicio": "07:15",
+            "atendimento_fim": "17:30",
+            "verificacao": false,
+            "contatos": [
+                {
+                    "telefone": "84 9 9999-9999"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Implantodontia",
+                    "profissional": "Renata",
+                    "plano_de_saude": [
+                        {
+                            "id": "0004",
+                            "nome": "Saúde Dental Familiar",
+                            "codigo": "837465912"
+                        }
+                    ],
+                    "valor_da_consulta": "220.00"
+                },
+                {
+                    "nome": "Ortopedia facial",
+                    "profissional": "Hugo",
+                    "plano_de_saude": [
+                        {
+                            "id": "0007",
+                            "nome": "OrtoDental Care",
+                            "codigo": "987654321"
+                        }
+                    ],
+                    "valor_da_consulta": "160.00"
+                }
+            ]
+        },
+        {
+            "id": "0009",
+            "nome": "Healthy Smiles",
+            "endereco": [
+                {
+                    "cep": "57000-000",
+                    "logradouro": "Rua da Alegria",
+                    "numero": "90",
+                    "complemento": "",
+                    "bairro": "Centro",
+                    "cidade": "Maceió",
+                    "estado": "AL",
+                    "ponto_de_referencia": ""
+                }
+            ],
+            "atendimento_inicio": "08:45",
+            "atendimento_fim": "19:00",
+            "verificacao": true,
+            "contatos": [
+                {
+                    "telefone": "84 9 2222-2222"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Endodontia",
+                    "profissional": "Camila",
+                    "plano_de_saude": [
+                        {
+                            "id": "0006",
+                            "nome": "SmileHealth",
+                            "codigo": "321654987"
+                        }
+                    ],
+                    "valor_da_consulta": "210.00"
+                },
+                {
+                    "nome": "Odontologia estética",
+                    "profissional": "Guilherme",
+                    "plano_de_saude": [
+                        {
+                            "id": "0013",
+                            "nome": "EstheticDental",
+                            "codigo": "654123987"
+                        }
+                    ],
+                    "valor_da_consulta": "170.00"
+                }
+            ]
+        },
+        {
+            "id": "0010",
+            "nome": "Bright Dental",
+            "endereco": [
+                {
+                    "cep": "78000-000",
+                    "logradouro": "Avenida da Felicidade",
+                    "numero": "12",
+                    "complemento": "",
+                    "bairro": "Centro",
+                    "cidade": "Cuiabá",
+                    "estado": "MT",
+                    "ponto_de_referencia": ""
+                }
+            ],
+            "atendimento_inicio": "07:00",
+            "atendimento_fim": "18:00",
+            "verificacao": true,
+            "contatos": [
+                {
+                    "telefone": "84 9 1111-1111"
+                }
+            ],
+            "especialidades": [
+                {
+                    "nome": "Periodontia",
+                    "profissional": "Patrícia",
+                    "plano_de_saude": [
+                        {
+                            "id": "0014",
+                            "nome": "GumCare Plus",
+                            "codigo": "159753468"
+                        }
+                    ],
+                    "valor_da_consulta": "130.00"
+                },
+                {
+                    "nome": "Odontologia geral",
+                    "profissional": "Daniel",
+                    "plano_de_saude": [
+                        {
+                            "id": "0015",
+                            "nome": "DentalMaster",
+                            "codigo": "357159468"
+                        }
+                    ],
+                    "valor_da_consulta": "180.00"
+                }
+            ]
+        }
+    ]
+}

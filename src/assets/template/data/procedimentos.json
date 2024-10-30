@@ -1,0 +1,386 @@
+{
+    "data": [
+        {
+            "id": "0001",
+            "codigo": "PRC001",
+            "nome": "Limpeza Dental",
+            "preco": 100.00,
+            "descricao": "Procedimento de limpeza profissional dos dentes para remoção de placa bacteriana e tártaro.",
+            "duracao": "30 minutos",
+            "categoria": "Odontologia",
+            "complexidade": "Baixa",
+            "disponibilidade": true,
+            "instrucoes_pos_tratamento": "Evitar alimentos e bebidas pigmentadas nas primeiras 24 horas.",
+            "restricoes_contradicacoes": "Não recomendado para pacientes com doença periodontal avançada.",
+            "materiais_necessarios": [
+                {
+                    "id": "MAT001",
+                    "codigo": "MD001",
+                    "nome": "Sonda exploradora",
+                    "quantidade": 1,
+                    "unidade_de_medida": "unidade",
+                    "descricao": "Instrumento usado para detectar cáries e tártaro nos dentes.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 15.00,
+                    "data_de_validade": "2025-06-30",
+                    "localizacao": "Sala de Procedimentos"
+                },
+                {
+                    "id": "MAT002",
+                    "codigo": "BF002",
+                    "nome": "Fio dental",
+                    "quantidade": 1,
+                    "unidade_de_medida": "rolo",
+                    "descricao": "Usado para remover placa bacteriana entre os dentes.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 5.00,
+                    "data_de_validade": "2024-12-31",
+                    "localizacao": "Sala de Procedimentos"
+                }
+            ],
+            "imagens": [
+                {
+                    "id": "0001",
+                    "url": "https://exemplo.com/limpeza_dental.jpg",
+                    "nome": "Limpeza Dental",
+                    "descricao": "Imagem ilustrativa do procedimento de limpeza dental."
+                }
+            ],
+            "clinicas": [
+                {
+                    "id": "0001",
+                    "nome": "Mais Dental Med",
+                    "contatos": [
+                        {
+                            "id": "0001",
+                            "telefone": "84 9 8888-8888"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "0002",
+            "codigo": "PRC002",
+            "nome": "Extração de Siso",
+            "preco": 200.00,
+            "descricao": "Remoção cirúrgica dos dentes do siso para prevenir problemas futuros.",
+            "duracao": "1 hora",
+            "categoria": "Odontologia",
+            "complexidade": "Moderada",
+            "disponibilidade": true,
+            "instrucoes_pos_tratamento": "Evitar alimentos duros nas primeiras 48 horas.",
+            "restricoes_contradicacoes": "Não recomendado para pacientes com problemas cardíacos não controlados.",
+            "materiais_necessarios": [
+                {
+                    "id": "MAT003",
+                    "codigo": "FS001",
+                    "nome": "Fórceps para extração",
+                    "quantidade": 1,
+                    "unidade_de_medida": "unidade",
+                    "descricao": "Instrumento utilizado para extrair dentes.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 50.00,
+                    "data_de_validade": "2025-03-31",
+                    "localizacao": "Sala de Procedimentos"
+                },
+                {
+                    "id": "MAT004",
+                    "codigo": "AB003",
+                    "nome": "Anestésico local",
+                    "quantidade": 1,
+                    "unidade_de_medida": "ampola",
+                    "descricao": "Utilizado para anestesiar a área antes da extração.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 30.00,
+                    "data_de_validade": "2025-06-30",
+                    "localizacao": "Sala de Procedimentos"
+                }
+            ],
+            "imagens": [
+                {
+                    "url": "https://exemplo.com/extracao_siso.jpg",
+                    "nome": "Extração de Siso",
+                    "descricao": "Imagem ilustrativa do procedimento de extração de siso."
+                }
+            ],
+            "clinicas": [
+                {
+                    "id": "0001",
+                    "nome": "Mais Dental Med",
+                    "contatos": [
+                        {
+                            "id": "0001",
+                            "telefone": "84 9 8888-8888"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "0003",
+            "codigo": "PRC003",
+            "nome": "Restauração de Cárie",
+            "preco": 150.00,
+            "descricao": "Reparo de dente danificado devido a cárie com material restaurador.",
+            "duracao": "45 minutos",
+            "categoria": "Odontologia",
+            "complexidade": "Baixa",
+            "disponibilidade": true,
+            "instrucoes_pos_tratamento": "Evitar alimentos e bebidas quentes nas primeiras 24 horas.",
+            "restricoes_contradicacoes": "Não recomendado para pacientes com alergia a resina composta.",
+            "materiais_necessarios": [
+                {
+                    "id": "MAT001",
+                    "codigo": "MD001",
+                    "nome": "Sonda exploradora",
+                    "quantidade": 1,
+                    "unidade_de_medida": "unidade",
+                    "descricao": "Instrumento usado para detectar cáries nos dentes.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 15.00,
+                    "data_de_validade": "2025-06-30",
+                    "localizacao": "Sala de Procedimentos"
+                },
+                {
+                    "id": "MAT005",
+                    "codigo": "RC002",
+                    "nome": "Resina composta",
+                    "quantidade": 1,
+                    "unidade_de_medida": "seringa",
+                    "descricao": "Material usado para restauração de dentes.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 50.00,
+                    "data_de_validade": "2024-12-31",
+                    "localizacao": "Sala de Procedimentos"
+                }
+            ],
+            "imagens": [
+                {
+                    "url": "https://exemplo.com/restauracao_carie.jpg",
+                    "nome": "Restauração de Cárie",
+                    "descricao": "Imagem ilustrativa do procedimento de restauração de cárie."
+                }
+            ],
+            "clinicas": [
+                {
+                    "id": "0002",
+                    "nome": "Dental Care",
+                    "contatos": [
+                        {
+                            "id": "0002",
+                            "telefone": "84 9 9999-9999"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "0004",
+            "codigo": "PRC004",
+            "nome": "Exame de Vista",
+            "preco": 80.00,
+            "descricao": "Exame oftalmológico para avaliar a visão e prescrever correção se necessário.",
+            "duracao": "20 minutos",
+            "categoria": "Oftalmologia",
+            "complexidade": "Baixa",
+            "disponibilidade": true,
+            "instrucoes_pos_tratamento": "Usar óculos de sol ao ar livre nas primeiras horas após o exame.",
+            "restricoes_contradicacoes": "Não recomendado para pacientes com glaucoma não tratado.",
+            "materiais_necessarios": [
+                {
+                    "id": "MAT006",
+                    "codigo": "EC001",
+                    "nome": "Cartão de Snellen",
+                    "quantidade": 1,
+                    "unidade_de_medida": "unidade",
+                    "descricao": "Usado para testar a acuidade visual.",
+                    "fornecedor": "Optical Supplier Ltda",
+                    "preco_unitario": 20.00,
+                    "data_de_validade": null,
+                    "localizacao": "Sala de Consulta"
+                },
+                {
+                    "id": "MAT007",
+                    "codigo": "LU001",
+                    "nome": "Lâmpada de Fenda",
+                    "quantidade": 1,
+                    "unidade_de_medida": "unidade",
+                    "descricao": "Usada para examinar o olho em detalhes.",
+                    "fornecedor": "Optical Supplier Ltda",
+                    "preco_unitario": 500.00,
+                    "data_de_validade": null,
+                    "localizacao": "Sala de Consulta"
+                }
+            ],
+            "imagens": [
+                {
+                    "url": "https://exemplo.com/exame_vista.jpg",
+                    "nome": "Exame de Vista",
+                    "descricao": "Imagem ilustrativa do procedimento de exame de vista."
+                }
+            ],
+            "clinicas": [
+                {
+                    "id": "0003",
+                    "nome": "Clear Vision",
+                    "contatos": [
+                        {
+                            "id": "0003",
+                            "telefone": "84 9 7777-7777"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "0005",
+            "codigo": "PRC005",
+            "nome": "Consulta Médica",
+            "preco": 120.00,
+            "descricao": "Consulta médica de rotina para avaliação da saúde geral e orientações.",
+            "duracao": "30 minutos",
+            "categoria": "Medicina Geral",
+            "complexidade": "Baixa",
+            "disponibilidade": true,
+            "instrucoes_pos_tratamento": "Seguir as orientações do médico conforme necessário.",
+            "restricoes_contradicacoes": "Não recomendado para pacientes com sintomas graves sem tratamento.",
+            "materiais_necessarios": [],
+            "imagens": [
+                {
+                    "url": "https://exemplo.com/consulta_medica.jpg",
+                    "nome": "Consulta Médica",
+                    "descricao": "Imagem ilustrativa do procedimento de consulta médica."
+                }
+            ],
+            "clinicas": [
+                {
+                    "id": "0004",
+                    "nome": "Healthy Life Clinic",
+                    "contatos": [
+                        {
+                            "id": "0004",
+                            "telefone": "84 9 6666-6666"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "0006",
+            "codigo": "PRC006",
+            "nome": "Tratamento de Canal",
+            "preco": 300.00,
+            "descricao": "Remoção do tecido danificado dentro do dente para tratar infecções.",
+            "duracao": "1 hora",
+            "categoria": "Odontologia",
+            "complexidade": "Alta",
+            "disponibilidade": true,
+            "instrucoes_pos_tratamento": "Evitar mastigar com o dente tratado até a restauração final.",
+            "restricoes_contradicacoes": "Não recomendado para pacientes com lesões periapicais extensas.",
+            "materiais_necessarios": [
+                {
+                    "id": "MAT001",
+                    "codigo": "MD001",
+                    "nome": "Sonda exploradora",
+                    "quantidade": 1,
+                    "unidade_de_medida": "unidade",
+                    "descricao": "Instrumento usado para detectar cáries nos dentes.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 15.00,
+                    "data_de_validade": "2025-06-30",
+                    "localizacao": "Sala de Procedimentos"
+                },
+                {
+                    "id": "MAT008",
+                    "codigo": "GZ001",
+                    "nome": "Guta-percha",
+                    "quantidade": 1,
+                    "unidade_de_medida": "pct",
+                    "descricao": "Material utilizado para preencher o canal radicular.",
+                    "fornecedor": "Dental Supplier Ltda",
+                    "preco_unitario": 100.00,
+                    "data_de_validade": "2024-12-31",
+                    "localizacao": "Sala de Procedimentos"
+                }
+            ],
+            "imagens": [
+                {
+                    "url": "https://exemplo.com/tratamento_canal.jpg",
+                    "nome": "Tratamento de Canal",
+                    "descricao": "Imagem ilustrativa do procedimento de tratamento de canal."
+                }
+            ],
+            "clinicas": [
+                {
+                    "id": "0002",
+                    "nome": "Dental Care",
+                    "contatos": [
+                        {
+                            "id": "0002",
+                            "telefone": "84 9 9999-9999"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "0007",
+            "codigo": "PRC007",
+            "nome": "Avaliação de Papanicolau",
+            "preco": 90.00,
+            "descricao": "Exame para detecção precoce de câncer cervical.",
+            "duracao": "15 minutos",
+            "categoria": "Ginecologia",
+            "complexidade": "Baixa",
+            "disponibilidade": true,
+            "instrucoes_pos_tratamento": "Evitar relações sexuais nas 24 horas seguintes ao exame.",
+            "restricoes_contradicacoes": "Não recomendado durante o período menstrual.",
+            "materiais_necessarios": [
+                {
+                    "id": "MAT009",
+                    "codigo": "LP001",
+                    "nome": "Lâmina de Papanicolau",
+                    "quantidade": 1,
+                    "unidade_de_medida": "unidade",
+                    "descricao": "Usada para coletar células cervicais para exame.",
+                    "fornecedor": "Gyno Supplier Ltda",
+                    "preco_unitario": 10.00,
+                    "data_de_validade": null,
+                    "localizacao": "Sala de Consulta"
+                },
+                {
+                    "id": "MAT010",
+                    "codigo": "LB001",
+                    "nome": "Lubrificante",
+                    "quantidade": 1,
+                    "unidade_de_medida": "tubo",
+                    "descricao": "Usado para facilitar a inserção do espéculo vaginal.",
+                    "fornecedor": "Gyno Supplier Ltda",
+                    "preco_unitario": 5.00,
+                    "data_de_validade": null,
+                    "localizacao": "Sala de Consulta"
+                }
+            ],
+            "imagens": [
+                {
+                    "url": "https://exemplo.com/avaliacao_papanicolau.jpg",
+                    "nome": "Avaliação de Papanicolau",
+                    "descricao": "Imagem ilustrativa do procedimento de avaliação de Papanicolau."
+                }
+            ],
+            "clinicas": [
+                {
+                    "id": "0005",
+                    "nome": "Women's Health Clinic",
+                    "contatos": [
+                        {
+                            "id": "0005",
+                            "telefone": "84 9 5555-5555"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

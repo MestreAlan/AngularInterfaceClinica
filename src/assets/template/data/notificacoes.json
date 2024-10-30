@@ -1,0 +1,53 @@
+{
+    "data": [
+        {
+            "id": "0001",
+            "data": "2024-12-31",
+            "informacao": "Seu pagamento foi autorizado com sucesso",
+            "classe": "Financeiro",
+            "visto": false
+        },
+        {
+            "id": "0002",
+            "data": "2024-12-31",
+            "informacao": "Seu retorno foi agendado com sucesso para o dia 10/10/2024",
+            "classe": "Clinico",
+            "visto": false
+        },
+        {
+            "id": "0003",
+            "data": "2024-12-30",
+            "informacao": "Agendamento realizado com sucesso",
+            "classe": "Agendamento",
+            "visto": false
+        },
+        {
+            "id": "0004",
+            "data": "2024-12-30",
+            "informacao": "Parabéns por seu aniversário",
+            "classe": "Geral",
+            "visto": true
+        },
+        {
+            "id": "0005",
+            "data": "2024-12-28",
+            "informacao": "Data de retorno ideal para Doutor Clerivan, na Clinica UDFace está próxima",
+            "classe": "Recorrencia",
+            "visto": true
+        },
+        {
+            "id": "0006",
+            "data": "2024-12-28",
+            "informacao": "Senha modificada com sucesso",
+            "classe": "Seguranca",
+            "visto": true
+        },
+        {
+            "id": "0007",
+            "data": "2024-12-28",
+            "informacao": "Nota de atualização do sistema às 04:00 do dia 10/10/2024",
+            "classe": "Sistema",
+            "visto": true
+        }
+    ]
+}

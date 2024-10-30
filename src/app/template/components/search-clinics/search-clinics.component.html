@@ -1,0 +1,127 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <h5>Filtrar Clínicas</h5>
+            <p-table #dt1 [value]="clinicas" dataKey="id" [rows]="5" [loading]="loading" [rowHover]="true"
+                styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['filtroGlobal']"
+                responsiveLayout="scroll">
+                <ng-template pTemplate="caption">
+                    <div class="flex justify-content-between flex-column sm:flex-row">
+                        <button pButton label="Limpar" class="p-button-outlined mb-2" icon="pi pi-filter-slash"
+                            (click)="clear(dt1)"></button>
+                        <span class="p-input-icon-left mb-2">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)"
+                                placeholder="Buscar" class="w-full" />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="min-width: 12rem" pSortableColumn="nome">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Nome</span>
+                                    <p-sortIcon field="nome"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="nome" display="menu"
+                                    placeholder="Buscar clinica"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 12rem" pSortableColumn="enderecoFormatado"
+                            [ngClass]="{'p-sortable-column': true}">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Endereço</span>
+                                    <p-sortIcon field="enderecoFormatado"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="enderecoFormatado" display="menu"
+                                    placeholder="Buscar endereço"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem" pSortableColumn="atendimento_inicio">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Abre às</span>
+                                    <p-sortIcon field="atendimento_inicio"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="atendimento_inicio" display="menu"
+                                    placeholder="Buscar hora (HH:mm)"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem" pSortableColumn="atendimento_fim">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Fecha às</span>
+                                    <p-sortIcon field="atendimento_fim"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="atendimento_fim" display="menu"
+                                    placeholder="Buscar hora (HH:mm)"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 12rem" pSortableColumn="contatosFormatado">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Contatos</span>
+                                    <p-sortIcon field="contatosFormatado"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="contatosFormatado" display="menu"
+                                    placeholder="Buscar contatos"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem">
+                            <div class="flex justify-content-between align-items-center">
+                                Verificado
+                                <p-columnFilter type="boolean" field="verificacao" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem">
+                            <div class="flex justify-content-between align-items-center">
+                                Marcar
+                                <p-columnFilter type="boolean" field="view" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-clinica>
+                    <tr>
+                        <td>
+                            {{clinica.nome}}
+                        </td>
+                        <td>
+                            <a [href]="getEnderecoLink(clinica.endereco)" [innerHTML]="getEndereco(clinica.endereco)"
+                                target="_blank">
+                            </a>
+                        </td>
+                        <td>
+                            {{ clinica.atendimento_inicio }}
+                        </td>
+                        <td>
+                            {{ clinica.atendimento_fim }}
+                        </td>
+                        <td [innerHTML]="getContatos(clinica.contatos)"></td>
+                        <td class="text-center">
+                            <i class="pi"
+                                [ngClass]="{'true-icon pi-check-circle text-green-500': clinica.verificacao, 'false-icon pi-times-circle text-pink-500': !clinica.verificacao}"></i>
+                        </td>
+                        <td class="text-center">
+                            <button pButton pRipple type="button" icon="pi pi-search"
+                                class="p-button p-component p-button-text p-button-icon-only"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="8">Nenhuma clinica encontrada.</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="loadingbody">
+                    <tr>
+                        <td colspan="8">Carregando clinicas. Por favor, aguarde.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
+    </div>
+</div>

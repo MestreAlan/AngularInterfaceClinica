@@ -1,0 +1,48 @@
+.my-max_height {
+    height: 500px;
+    /* Define a altura máxima que você deseja, ajuste conforme necessário */
+    overflow-y: auto;
+    /* Ativa a barra de rolagem quando a altura exceder a altura máxima */
+}
+
+.card {
+    background: var(--surface-card);
+    border: 1px solid var(--surface-border);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+    border-radius: $borderRadius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.p-toast {
+
+    &.p-toast-top-right,
+    &.p-toast-top-left,
+    &.p-toast-top-center {
+        top: 100px;
+    }
+}
+
+.not-seen {
+    font-weight: bold;
+    background-color: transparent;
+    animation: highlight 3s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: transparent;
+    }
+
+    20% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}

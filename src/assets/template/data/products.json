@@ -1,0 +1,56 @@
+{
+    "data": [
+        {
+            "id": "1000",
+            "code": "f230fh0g3",
+            "name": "UDFace clinica do norte potiguar",
+            "description": "Clinica",
+            "image": "bamboo-watch.jpg",
+            "price": 120,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "createdAt": "07/03/2024"
+        },
+        {
+            "id": "1001",
+            "code": "f230fh0g4",
+            "name": "UDFace",
+            "description": "Product Description",
+            "image": "black-watch.jpg",
+            "price": 120,
+            "category": "Accessories",
+            "quantity": 61,
+            "inventoryStatus": "OUTOFSTOCK",
+            "rating": 4,
+            "createdAt": "12/09/2023"
+        },
+        {
+            "id": "1002",
+            "code": "f230fh0g5",
+            "name": "OralMed",
+            "description": "Product Description",
+            "image": "blue-band.jpg",
+            "price": 140,
+            "category": "Fitness",
+            "quantity": 2,
+            "inventoryStatus": "LOWSTOCK",
+            "rating": 3,
+            "createdAt": "03/04/2023"
+        },
+        {
+            "id": "1002",
+            "code": "f230fh0g5",
+            "name": "OralMed",
+            "description": "Product Description",
+            "image": "blue-band.jpg",
+            "price": 140,
+            "category": "Fitness",
+            "quantity": 2,
+            "inventoryStatus": "LOWSTOCK",
+            "rating": 3,
+            "createdAt": "03/04/2023"
+        }
+    ]
+}

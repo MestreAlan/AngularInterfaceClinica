@@ -1,0 +1,91 @@
+<div class="grid">
+    <div class="col-12 xl:col-5">
+        <div class="card my-max_height">
+            <div class="flex align-items-center justify-content-between mb-4">
+                <h5>Notificações</h5>
+                <div>
+                    <button pButton type="button" icon="pi pi-ellipsis-v"
+                        class="p-button-rounded p-button-text p-button-plain" (click)="menu.toggle($event)"></button>
+                    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                </div>
+            </div>
+
+            <div *ngFor="let dataGroup of notificacoes | keyvalue: sortDataGroups">
+                <span class="block text-600 font-medium mb-3">{{ dataGroup.key }}</span>
+                <ul class="p-0 mx-0 mt-0 mb-4 list-none">
+                    <li *ngFor="let notificacao of dataGroup.value"
+                        class="flex align-items-center py-2 border-bottom-1 surface-border">
+                        <div [ngClass]="notificacaoConfig[notificacao.classe]?.icon"
+                            class="w-3rem h-3rem flex align-items-center justify-content-center border-circle mr-3 flex-shrink-0"
+                            [class.bg-yellow-300]="!notificacao.visto" [class.bg-green-300]="notificacao.visto">
+                        </div>
+                        <span class="text-900 line-height-3" [ngClass]="{'not-seen': !notificacao.visto}">
+                            {{ notificacao.informacao }}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-12 xl:col-7">
+        <div class="card my-max_height">
+            <h5>Agendamentos</h5>
+            <p-tabView orientation="left">
+                <p-tabPanel header="Agendamentos em aberto" class="line-height-3 m-0">
+                    <p-table [value]="agendamentosEmAberto" [paginator]="true" [rows]="4" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="clinica">Clinica <p-sortIcon field="clinica"></p-sortIcon></th>
+                                <th pSortableColumn="profissional">Profissional <p-sortIcon
+                                        field="profissional"></p-sortIcon></th>
+                                <th pSortableColumn="data">Data <p-sortIcon field="data"></p-sortIcon></th>
+                                <th>Visualizar</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-agendamento>
+                            <tr>
+                                <td>{{agendamento.clinica[0]?.nome}}</td>
+                                <td>{{agendamento.clinica[0]?.profissional}}</td>
+                                <td>{{agendamento.data | date:'dd/MM/yyyy'}}</td>
+                                <td>
+                                    <button pButton pRipple type="button" icon="pi pi-search"
+                                        class="p-button p-component p-button-text p-button-icon-only"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-tabPanel>
+
+                <p-tabPanel header="Histórico de agendamentos" class="line-height-3 m-0">
+                    <p-table [value]="historicoAgendamentos" [paginator]="true" [rows]="4" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="clinica">Clinica <p-sortIcon field="clinica"></p-sortIcon></th>
+                                <th pSortableColumn="profissional">Profissional <p-sortIcon
+                                        field="profissional"></p-sortIcon></th>
+                                <th>Status</th>
+                                <th pSortableColumn="data">Data <p-sortIcon field="data"></p-sortIcon></th>
+                                <th>Visualizar</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-agendamento>
+                            <tr>
+                                <td>{{agendamento.clinica[0]?.nome}}</td>
+                                <td>{{agendamento.clinica[0]?.profissional}}</td>
+                                <td>{{agendamento.status}}</td>
+                                <td>{{agendamento.data | date:'dd/MM/yyyy'}}</td>
+                                <td>
+                                    <button pButton pRipple type="button" icon="pi pi-search"
+                                        class="p-button p-component p-button-text p-button-icon-only"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-tabPanel>
+
+            </p-tabView>
+        </div>
+    </div>
+</div>

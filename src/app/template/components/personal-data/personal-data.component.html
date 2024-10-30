@@ -1,0 +1,488 @@
+<div class="grid p-fluid">
+    <div class="col-12 md:col-6">
+        <div class="card p-fluid">
+            <h5>Dados básicos</h5>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="float-input-nome" type="text" pInputText [(ngModel)]="name">
+                    <label for="float-input-nome">Nome</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="dateOfBirth"
+                        dateFormat="dd/mm/yy"></p-calendar>
+                    <label for="float-input">Data de nascimento</label>
+                </span>
+            </div>
+
+            <!-- Campo para exibir a idade -->
+            <div class="col-12" *ngIf="dateOfBirth">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText [value]="calculateAge()" disabled>
+                    <label for="float-input">Idade</label>
+                </span>
+            </div>
+
+            <div class="col-12">
+                <span class="p-float-label">
+                    <p-dropdown [options]="education" [(ngModel)]="selectedEducation" placeholder="Selecione"
+                        optionLabel="nome" class="multiselect-custom" display="chip">
+                    </p-dropdown>
+                    <label for="float-input">Escolaridade</label>
+                </span>
+            </div>
+
+            <div class="col-12">
+                <span class="p-float-label">
+                    <p-dropdown [options]="countries" [(ngModel)]="selectedCountryNaturalidade"
+                        placeholder="Selecione um País" optionLabel="nome" class="multiselect-custom" display="chip">
+                    </p-dropdown>
+                    <label for="float-input">Naturalidade País</label>
+                </span>
+            </div>
+
+            <!-- Oculta os campos de estado e município se o país não for o Brasil -->
+            <div class="col-12" *ngIf="selectedCountryNaturalidade && selectedCountryNaturalidade.nome === 'Brasil'">
+                <span class="p-float-label">
+                    <p-dropdown [options]="states" [(ngModel)]="selectedStateId" placeholder="Selecione um Estado"
+                        optionLabel="nome" (onChange)="onStateChange(selectedStateId.id, selectedStateId.nome)"
+                        class="multiselect-custom" display="chip">
+                    </p-dropdown>
+                    <label for="float-input">Naturalidade Estado</label>
+                </span>
+            </div>
+
+            <div class="col-12"
+                *ngIf="selectedCountryNaturalidade && selectedCountryNaturalidade.nome === 'Brasil' && selectedStateId">
+                <span class="p-float-label">
+                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Selecione um Município"
+                        optionLabel="nome" class="multiselect-custom" display="chip">
+                    </p-dropdown>
+                    <label for="float-input">Naturalidade Município</label>
+                </span>
+            </div>
+
+            <div class="col-12">
+                <h6>Sexo</h6>
+                <div class="grid formgrid">
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="sexo" value="Masculino" [(ngModel)]="valRadioSexo"
+                                id="sexo1"></p-radioButton>
+                            <label for="sexo1">Masculino</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="sexo" value="Feminino" [(ngModel)]="valRadioSexo"
+                                id="sexo2"></p-radioButton>
+                            <label for="sexo2">Feminino</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="sexo" value="Não declarado" [(ngModel)]="valRadioSexo"
+                                id="sexo3"></p-radioButton>
+                            <label for="sexo3">Não declarado</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <h6>Etnia</h6>
+                <div class="grid formgrid">
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="etnia" value="Amarelo" [(ngModel)]="valRadioEtnia"
+                                id="etnia1"></p-radioButton>
+                            <label for="etnia1">Amarelo</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="etnia" value="Branco" [(ngModel)]="valRadioEtnia"
+                                id="etnia2"></p-radioButton>
+                            <label for="etnia2">Branco</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="etnia" value="Indígina" [(ngModel)]="valRadioEtnia"
+                                id="etnia3"></p-radioButton>
+                            <label for="etnia3">Indígina</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="etnia" value="Negro" [(ngModel)]="valRadioEtnia"
+                                id="etnia4"></p-radioButton>
+                            <label for="etnia4">Negro</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="etnia" value="Pardo" [(ngModel)]="valRadioEtnia"
+                                id="etnia5"></p-radioButton>
+                            <label for="etnia5">Pardo</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <h6>Estado civil</h6>
+                <div class="grid formgrid">
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="estado_civil" value="Casado" [(ngModel)]="valRadioEstadoCivil"
+                                id="estado_civil1"></p-radioButton>
+                            <label for="estado_civil1">Casado</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="estado_civil" value="Divorciado" [(ngModel)]="valRadioEstadoCivil"
+                                id="estado_civil2"></p-radioButton>
+                            <label for="estado_civil2">Divorciado</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="estado_civil" value="Separado" [(ngModel)]="valRadioEstadoCivil"
+                                id="estado_civil3"></p-radioButton>
+                            <label for="estado_civil3">Separado</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="estado_civil" value="Solteiro" [(ngModel)]="valRadioEstadoCivil"
+                                id="estado_civil4"></p-radioButton>
+                            <label for="estado_civil4">Solteiro</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="estado_civil" value="Viúvo" [(ngModel)]="valRadioEstadoCivil"
+                                id="estado_civil5"></p-radioButton>
+                            <label for="estado_civil5">Viúvo</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText>
+                    <label for="float-input">Profissão</label>
+                </span>
+            </div>
+        </div>
+
+        <div class="card p-fluid">
+            <h5>Contato</h5>
+            <div class="card p-fluid">
+                <h6>E-mail</h6>
+                <div class="col-12">
+                    <span class="p-float-label">
+                        <input id="float-input-email" type="text" pInputText [(ngModel)]="email">
+                        <label for="float-input-email">E-mail</label>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Telefones -->
+            <div class="card p-fluid" *ngFor="let telefone of telefones; let i = index">
+                <h6>Telefone {{ i + 1 }}</h6>
+                <div class="col-12">
+                    <span class="p-float-label">
+                        <input id="float-input-telefone{{ i }}" type="text" pInputText [(ngModel)]="telefone.numero">
+                        <label for="float-input-telefone{{ i }}">Telefone</label>
+                    </span>
+                </div>
+
+                <!-- Adicione um dropdown para selecionar o tipo de contato -->
+                <div class="col-12">
+                    <label for="tipoContato{{ i }}">Tipo de Contato</label>
+                    <p-dropdown id="tipoContato{{ i }}" [options]="tiposContato" [(ngModel)]="telefone.tipo"
+                        optionLabel="label" (onChange)="onTipoContatoChange(i)"></p-dropdown>
+                </div>
+
+                <!-- Campo para adicionar o nome do contato -->
+                <div class="col-12">
+                    <span class="p-float-label">
+                        <input id="float-input-nome{{ i }}" type="text" pInputText [(ngModel)]="telefone.nomeContato">
+                        <label for="float-input-nome{{ i }}">Nome do Contato</label>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Botão para adicionar telefone -->
+            <div class="col-12">
+                <button type="button" class="p-button p-button-rounded p-button-text" (click)="adicionarTelefone()">
+                    Adicionar telefone
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <div class="card p-fluid">
+            <h5>Documentos</h5>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText>
+                    <label for="float-input">CPF</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText>
+                    <label for="float-input">RG</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText>
+                    <label for="float-input">Orgão emissor do RG</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="dateOfEmissionRG"></p-calendar>
+                    <label for="float-input">Data de expedição RG</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <p-dropdown [options]="states" [(ngModel)]="selectedRgStateId" placeholder="Selecione um Estado"
+                        optionLabel="nome" (onChange)="onRgStateChange(selectedRgStateId)">
+                    </p-dropdown>
+                    <label for="float-input">UF RG</label>
+                </span>
+            </div>
+        </div>
+
+        <div class="card p-fluid">
+            <h5>Endereço</h5>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="enderecoCep" type="text" pInputText [(ngModel)]="endereco.cep"
+                        (change)="buscarEnderecoPorCep()">
+                    <label for="enderecoCep">CEP</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="enderecoLogradouro" type="text" pInputText [(ngModel)]="endereco.logradouro">
+                    <label for="enderecoLogradouro">Logradouro</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="enderecoNumero" type="text" pInputText [(ngModel)]="endereco.numero">
+                    <label for="enderecoNumero">Número</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="enderecoCidade" type="text" pInputText [(ngModel)]="endereco.cidade">
+                    <label for="enderecoCidade">Cidade</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="enderecoEstado" type="text" pInputText [(ngModel)]="endereco.estado">
+                    <label for="enderecoEstado">Estado</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input id="enderecoBairro" type="text" pInputText [(ngModel)]="endereco.bairro">
+                    <label for="enderecoBairro">Bairro</label>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 md:col-12">
+        <div class="card p-fluid">
+            <h5>Gerenciador de arquivos</h5>
+            <div class="center">
+                <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+                    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                        Araste e solte seus arquivos aqui.
+                        <button type="button" class="brow" (click)="openFileSelector()">Selecionar arquivos</button>
+                    </ng-template>
+                </ngx-file-drop>
+                <div class="upload-table">
+                    <div class="col-12">
+                        <div class="card">
+                            <h5>Lista de arquivos</h5>
+                            <p-dataView #dv [value]="files" [paginator]="true" [rows]="6" layout="grid">
+                                <ng-template pTemplate="header">
+                                    <div class="flex flex-column md:flex-row md:justify-content-between gap-2">
+                                        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                                    </div>
+                                </ng-template>
+
+                                <ng-template let-files pTemplate="listItem">
+                                    <div class="col-12" *ngFor="let item of files; let i=index">
+                                        <div class="flex flex-column md:flex-row align-items-center p-3 w-full">
+                                            <div *ngIf="item.fileEntry && item.fileEntry.isFile">
+                                                <ng-container [ngSwitch]="getFileType(item.fileEntry)">
+                                                    <ng-container *ngSwitchCase="'image'">
+                                                        <!-- Exibir uma miniatura da imagem -->
+                                                        <img class="preview" [src]="imageListPath[item.relativePath]">
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchCase="'pdf'">
+                                                        <!-- Exibir ícone de PDF -->
+                                                        <i class="pi pi-file-pdf preview"></i>
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchCase="'doc'">
+                                                        <!-- Exibir ícone de documento do Word -->
+                                                        <i class="pi pi-file-word preview"></i>
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchCase="'other'">
+                                                        <!-- Exibir ícone genérico para outros tipos de arquivo -->
+                                                        <i class="pi pi-file-o w-9 preview"></i>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </div>
+                                            <div
+                                                class="flex-1 flex flex-column align-items-center text-center md:text-left">
+                                                <div class="font-bold text-2xl">{{item.fileEntry.name}}</div>
+                                            </div>
+                                            <div>
+                                                <p-multiSelect [options]="fileTypes" [(ngModel)]="selectedFile"
+                                                    placeholder="Tipo de documento" optionLabel="name"
+                                                    class="multiselect-custom" display="chip">
+                                                    <ng-template let-fileTypes pTemplate="selectedItem">
+                                                        <div class="flex align-items-center">
+                                                            <span class="ml-2">{{ fileTypes.name }}</span>
+                                                        </div>
+                                                    </ng-template>
+                                                </p-multiSelect>
+                                            </div>
+                                            <div>
+                                                <span class="p-buttonset">
+                                                    <div *ngIf="item.fileEntry && item.fileEntry.isFile">
+                                                        <ng-container [ngSwitch]="getFileType(item.fileEntry)">
+                                                            <ng-container *ngSwitchCase="'image'">
+                                                                <button class="button_see p-button-success" pButton
+                                                                    pRipple icon="pi pi-eye"
+                                                                    (click)="visualizarArquivoImg(item.fileEntry)"></button>
+                                                            </ng-container>
+                                                            <ng-container *ngSwitchCase="'pdf'">
+                                                                <button class="button_see p-button-success" pButton
+                                                                    pRipple icon="pi pi-eye"
+                                                                    (click)="visualizarArquivoPdf(item.fileEntry)"></button>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </div>
+                                                    <button class="button_download p-button-info" pButton pRipple
+                                                        icon="pi pi-cloud-download"
+                                                        (click)="downloadArquivo(item.fileEntry)"></button>
+                                                    <button class="button_exclude p-button-danger" pButton pRipple
+                                                        icon="pi pi-trash"
+                                                        (click)="excluirArquivo(item.fileEntry)"></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+
+                                <ng-template let-files pTemplate="gridItem">
+                                    <div class="grid grid-nogutter">
+                                        <div class="col-12 md:col-4" *ngFor="let item of files; let i=index">
+                                            <div class="card m-3 border-1 surface-border">
+                                                <div class="flex flex-column align-items-center text-center mb-3">
+                                                    <div *ngIf="item.fileEntry && item.fileEntry.isFile">
+                                                        <ng-container [ngSwitch]="getFileType(item.fileEntry)">
+                                                            <ng-container *ngSwitchCase="'image'">
+                                                                <!-- Exibir uma miniatura da imagem -->
+                                                                <img class="preview"
+                                                                    [src]="imageListPath[item.relativePath]">
+                                                            </ng-container>
+                                                            <ng-container *ngSwitchCase="'pdf'">
+                                                                <!-- Exibir ícone de PDF -->
+                                                                <i class="pi pi-file-pdf preview"></i>
+                                                            </ng-container>
+                                                            <ng-container *ngSwitchCase="'doc'">
+                                                                <!-- Exibir ícone de documento do Word -->
+                                                                <i class="pi pi-file-word preview"></i>
+                                                            </ng-container>
+                                                            <ng-container *ngSwitchCase="'other'">
+                                                                <!-- Exibir ícone genérico para outros tipos de arquivo -->
+                                                                <i class="pi pi-file-o w-9 preview"></i>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </div>
+                                                    <div class="mb-3">{{item.fileEntry.name}}</div>
+
+                                                    <div>
+                                                        <p-multiSelect [options]="fileTypes" [(ngModel)]="selectedFile"
+                                                            placeholder="Tipo de documento" optionLabel="name"
+                                                            class="multiselect-custom" display="chip">
+                                                            <ng-template let-fileTypes pTemplate="selectedItem">
+                                                                <div class="flex align-items-center">
+                                                                    <span class="ml-2">{{ fileTypes.name }}</span>
+                                                                </div>
+                                                            </ng-template>
+                                                        </p-multiSelect>
+                                                    </div>
+                                                    <div>
+                                                        <span class="p-buttonset">
+                                                            <div *ngIf="item.fileEntry && item.fileEntry.isFile">
+                                                                <ng-container [ngSwitch]="getFileType(item.fileEntry)">
+                                                                    <ng-container *ngSwitchCase="'image'">
+                                                                        <button class="button_see p-button-success"
+                                                                            pButton pRipple icon="pi pi-eye"
+                                                                            (click)="visualizarArquivoImg(item.fileEntry)"></button>
+                                                                    </ng-container>
+                                                                    <ng-container *ngSwitchCase="'pdf'">
+                                                                        <button class="button_see p-button-success"
+                                                                            pButton pRipple icon="pi pi-eye"
+                                                                            (click)="visualizarArquivoPdf(item.fileEntry)"></button>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </div>
+                                                            <button class="button_download p-button-info" pButton
+                                                                pRipple icon="pi pi-cloud-download"
+                                                                (click)="downloadArquivo(item.fileEntry)"></button>
+                                                            <button class="button_exclude p-button-danger" pButton
+                                                                pRipple icon="pi pi-trash"
+                                                                (click)="excluirArquivo(item.fileEntry)"></button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-dataView>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- personal-data.component.html -->
+    <p-dialog header="Visualização de Arquivo" [(visible)]="displayPDF" [modal]="true" [responsive]="true"
+        [contentStyle]="{'overflow': 'auto', 'height': '400vh', 'width': '150vh'}" [dismissableMask]="true">
+        <!-- Atribua diretamente o valor seguro à propriedade src do iframe -->
+        <iframe *ngIf="pdfPath" [src]="pdfPath" width="100%" height="100%"></iframe>
+    </p-dialog>
+
+
+    <p-dialog header="Visualização de Imagem" [(visible)]="displayImage" [modal]="true" [responsive]="true"
+        [contentStyle]="{'overflow': 'auto', 'height': '80vh', 'width': '80vh'}" [dismissableMask]="true">
+        <img *ngIf="imagePath" [src]="imagePath" width="100%" height="auto" />
+    </p-dialog>
+
+
+</div>

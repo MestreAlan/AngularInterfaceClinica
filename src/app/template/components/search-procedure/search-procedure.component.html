@@ -1,0 +1,102 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <h5>Filtrar Procedimentos</h5>
+            <p-table #dt1 [value]="procedimentos" dataKey="id" [rows]="5" [loading]="loading" [rowHover]="true"
+                styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['filtroGlobal']"
+                responsiveLayout="scroll">
+                <ng-template pTemplate="caption">
+                    <div class="flex justify-content-between flex-column sm:flex-row">
+                        <button pButton label="Limpar" class="p-button-outlined mb-2" icon="pi pi-filter-slash"
+                            (click)="clear(dt1)"></button>
+                        <span class="p-input-icon-left mb-2">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)"
+                                placeholder="Buscar" class="w-full" />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="min-width: 8rem" pSortableColumn="codigo">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Código</span>
+                                    <p-sortIcon field="codigo"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="codigo" display="menu"
+                                    placeholder="Buscar código"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 12rem" pSortableColumn="nome">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Nome do Procedimento</span>
+                                    <p-sortIcon field="nome"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="nome" display="menu"
+                                    placeholder="Buscar procedimento"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem" pSortableColumn="preco">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Valor do Procedimento</span>
+                                    <p-sortIcon field="preco"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="preco" display="menu"
+                                    placeholder="Buscar preço"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 12rem" pSortableColumn="nomeClinicaFormatado">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Nome da Clínica</span>
+                                    <p-sortIcon field="nomeClinicaFormatado"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="nomeClinicaFormatado" display="menu"
+                                    placeholder="Buscar clinica"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 12rem" pSortableColumn="contatoFormatado">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex align-items-center">
+                                    <span class="mr-2">Número dos Contatos</span>
+                                    <p-sortIcon field="contatoFormatado"></p-sortIcon>
+                                </div>
+                                <p-columnFilter type="text" field="contatoFormatado" display="menu"
+                                    placeholder="Buscar contatos"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem">
+                            Marcar
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-procedimento>
+                    <tr>
+                        <td>{{ procedimento.codigo }}</td>
+                        <td>{{ procedimento.nome }}</td>
+                        <td>{{ procedimento.preco | currency:'BRL' }}</td>
+                        <td [innerHTML]="getNomeClinica(procedimento.clinicas)"></td>
+                        <td [innerHTML]="getContatos(procedimento.clinicas)"></td>
+                        <td class="text-center">
+                            <button pButton pRipple type="button" icon="pi pi-search"
+                                class="p-button p-component p-button-text p-button-icon-only"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="6">Nenhum procedimento encontrado.</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="loadingbody">
+                    <tr>
+                        <td colspan="6">Carregando procedimentos. Por favor, aguarde.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
